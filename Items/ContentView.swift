@@ -8,14 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("isDarkOn") private var isDarkOn: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            Tab("Men's clothing", systemImage: "figure.stand") {
+                NavigationStack {
+                    CategoryView(category: .men)
+                }
+            }
+            
+            Tab("Women's clothing", systemImage: "figure.stand.dress") {
+                NavigationStack {
+                    CategoryView(category: .women)
+                }
+            }
+            
+            Tab("Jewelery", systemImage: "sparkles") {
+                NavigationStack {
+                    CategoryView(category: .jewelery)
+                }
+            }
+            
+            Tab("Electronics", systemImage: "macbook.and.iphone") {
+                NavigationStack {
+                    CategoryView(category: .electronics)
+                }
+            }
         }
-        .padding()
+        .preferredColorScheme(isDarkOn ? .dark : .light)
+        .tint(isDarkOn ? .white : .primary)
+        .scrollIndicators(.hidden)
     }
 }
 
