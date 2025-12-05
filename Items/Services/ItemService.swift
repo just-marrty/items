@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import Observation
 
+@Observable
 class ItemService {
     var itemsData: [Item] = []
     var categoryData: [Item] = []
