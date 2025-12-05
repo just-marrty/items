@@ -30,6 +30,7 @@ The project demonstrates modern SwiftUI patterns and view composition:
   - Provides search functionality with case-insensitive filtering
   - Category filtering to display items by selected category
   - Manages item data and category-specific filtering
+  - Uses `@Observable` macro for modern state management
 
 ### Views
 
@@ -69,6 +70,7 @@ The project demonstrates modern SwiftUI patterns and view composition:
 
 - `@State` for local view state (search text, item service instance)
 - `@AppStorage` for persistent dark mode preference
+- `@Observable` macro for service class state management
 - Reactive filtering with computed properties based on `@State` changes
 - NavigationStack with type-safe routing using `Item` as destination type
 
@@ -79,6 +81,7 @@ The project demonstrates modern SwiftUI patterns and view composition:
 - **JSON Decoding** - Custom Decodable implementation with CodingKeys
 - **Searchable** - Built-in search functionality with real-time filtering
 - **AppStorage** - Persistent user preferences for theme
+- **@Observable** - Modern observation framework for state management
 - **AsyncImage** - Asynchronous image loading from remote URLs
 - **TabView** - Tab-based navigation for category selection
 - **Animation** - Smooth transitions with default SwiftUI animations
