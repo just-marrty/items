@@ -16,12 +16,8 @@ struct CategoryView: View {
     
     @State private var searchText: String = ""
     
-    var filteredItems: [Item] {
-        return itemService.search(for: searchText)
-    }
-    
     var body: some View {
-        List(filteredItems) { item in
+        List(itemService.search(for: searchText)) { item in
             NavigationLink(value: item) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(item.title)
